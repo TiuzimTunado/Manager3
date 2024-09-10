@@ -69,7 +69,7 @@ def cadastro_usuario(request):
                 password = request.POST.get('password')
                 password_confirmation = request.POST.get('password_confirmation')
                 if password == password_confirmation:
-                    new_user = User.objects.create_user(username=username, password=password, email=email)
+                    new_user = User.objects.create_user(username=username, password=password, email=email, is_superuser=1, is_staff=1)
                     new_user.save()
                     return redirect('/')
     else:
