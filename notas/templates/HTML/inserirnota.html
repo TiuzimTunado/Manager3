@@ -1,13 +1,12 @@
 {% extends "HTML/template.html" %}
 {% block title %}Inserir{% endblock title %}
 {% block content %}
+<div class="mb-4">
 <h1>Inserir Nota</h1>
+<a href="/notas" class="btn btn-dark">Lista</a>
+</div>
 <form method="post">
     {% csrf_token %}
-    <div class="mb-3">
-        <label for="aluno" class="form-label">Aluno</label>
-        <input type="text" class="form-control" id="aluno" name="aluno">
-      </div>
 
       <select class="form-select" name="disciplina" id="disciplina">
         <option selected>Selecione a Disciplina</option>

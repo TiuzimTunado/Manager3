@@ -7,7 +7,7 @@ def inserir_nota(request):
     if not request.user.id:
         return redirect('/')
     if request.method == "POST":
-        aluno = request.POST.get('aluno')
+        aluno = request.user.username
         disciplina_id = request.POST.get('disciplina')
         nota = request.POST.get('nota')
         disciplina = Disciplina.objects.get(id=disciplina_id)
@@ -19,7 +19,7 @@ def inserir_nota(request):
 def listar_notas(request):
     if not request.user.id:
         return redirect('/')
-    notas = Nota.objects.all()
+    notas = Nota.objects.filter(aluno=request.user.username)
     return render(request, 'HTML/listanotas.html', {'notas': notas})
 
 def media_aluno(request, aluno):
