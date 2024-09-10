@@ -8,13 +8,27 @@
         <th>Disciplina</th>
         <th>Nota</th>
     </tr>
-    {% for nota in notas %}
-    <tr>
-        <td>{{ nota.aluno }}</td>
-        <td>{{ nota.disciplina.nome }}</td>
-        <td>{{ nota.nota }}</td>
-    </tr>
-    {% endfor %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Aluno</th>
+            <th scope="col">Disciplina</th>
+            <th scope="col">Nota</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+        </tr>
+            <td scope="row">{{ nota.id }}</th>
+                <td>{{ nota.aluno }}</td>
+                <td>{{ nota.disciplina.nome }}</td>
+                <td>{{ nota.nota }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+      </table>
     <a href='/'>Voltar</a>
 </table>
 {% endblock content%}
