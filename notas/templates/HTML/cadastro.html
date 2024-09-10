@@ -1,0 +1,30 @@
+{% extends 'HTML/template.html' %}
+{% block title %}
+  Cadastro
+{% endblock %}
+
+{% block content %}
+  {% if erro %}
+    {{ erro }}
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="username" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="username" name="username" autofocus />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <div class="mb-3">
+      <label for="password_confirmation" class="form-label">Confirmar Senha</label>
+      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </form>
+{% endblock %}

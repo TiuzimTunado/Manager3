@@ -1,0 +1,16 @@
+<h1>Lista de Notas</h1>
+<table>
+    <tr>
+        <th>Aluno</th>
+        <th>Disciplina</th>
+        <th>Nota</th>
+    </tr>
+    {% for nota in notas %}
+    <tr>
+        <td>{{ nota.aluno }}</td>
+        <td>{{ nota.disciplina.nome }}</td>
+        <td>{{ nota.nota }}</td>
+    </tr>
+    {% endfor %}
+    <a href='/'>Voltar</a>
+</table>
