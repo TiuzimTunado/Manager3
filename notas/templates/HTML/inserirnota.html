@@ -1,18 +1,26 @@
+{% extends "HTML/template.html" %}
+{% block title %}Inserir{% endblock title %}
+{% block content %}
 <h1>Inserir Nota</h1>
 <form method="post">
     {% csrf_token %}
-    <label for="aluno">Aluno:</label>
-    <input type="text" name="aluno" id="aluno"><br>
+    <div class="mb-3">
+        <label for="aluno" class="form-label">Aluno</label>
+        <input type="text" class="form-control" id="aluno" name="aluno">
+      </div>
 
-    <label for="disciplina">Disciplina:</label>
-    <select name="disciplina" id="disciplina">
+      <select class="form-select" name="disciplina" id="disciplina">
+        <option selected>Selecione a Disciplina</option>
         {% for disciplina in disciplinas %}
-        <option value="{{ disciplina.id }}">{{ disciplina.nome }}</option>
+        <option value="{{ disciplina.id }}">{{disciplina.nome}}</option>
         {% endfor %}
-    </select><br>
+      </select>
 
-    <label for="nota">Nota:</label>
-    <input type="text" name="nota" id="nota"><br>
+      <div class="mb-3">
+        <label for="nota" class="form-label">Nota</label>
+        <input type="number" class="form-control" id="nota" name="nota">
+      </div>
 
-     <input type="submit" value="Salvar">
+      <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
+{% endblock content %}

@@ -1,3 +1,6 @@
+{% extends "HTML/template.html" %}
+{% block title %}Lista{% endblock title %}
+{% block content %}
 <h1>Lista de Notas</h1>
 <table>
     <tr>
@@ -14,3 +17,4 @@
     {% endfor %}
     <a href='/'>Voltar</a>
 </table>
+{% endblock content%}
