@@ -1,21 +1,22 @@
 {% extends "HTML/template.html" %}
 {% block title %}login{% endblock title %}
 {% block content %}
+<h1>Login</h1>
 <form method='post' action=''>
    {% csrf_token %}
     <div class="row mb-3">
-      <label for="text" class="col-sm-2 col-form-label">Nome</label>
       <div class="col-sm-10">
+        <label for="text" class="col-sm-2 col-form-label">Nome</label>
         <input type="text" class="form-control" id="name" name='username'>
       </div>
     </div>
     <div class="row mb-3">
-      <label for="Password" class="col-sm-2 col-form-label">Password</label>
       <div class="col-sm-10">
+        <label for="Password" class="col-sm-2 col-form-label">Password</label>
         <input type="password" class="form-control" id="Password" name='password'>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Entrar</button>
-    <a href='cadastro'>Cadastro</a>
+    <a href='cadastro' class="btn btn-primary">Cadastro</a>
 </form>
 {% endblock content %}
