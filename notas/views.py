@@ -56,8 +56,6 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', usuarios=usuarios)
 
 def cadastro_usuario(request):
-    if not request.user.id:
-        return redirect('/')
     if request.method == "POST":
         try:
             usuario_email = User.objects.get(email=request.POST.get('email'))
@@ -80,7 +78,3 @@ def cadastro_usuario(request):
 def sair(request):
     logout(request)
     return redirect("/")
-
-
-
-
